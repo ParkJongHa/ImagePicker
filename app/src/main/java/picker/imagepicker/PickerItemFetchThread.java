@@ -41,11 +41,9 @@ class PickerItemFetchThread extends Thread {
             null,
             MediaStore.Images.Media.DATE_ADDED + " DESC");
 
-        if (null == cursor) HANDLER.sendEmptyMessage(-1);
-
-        int filePathColumn = 0;
-        int fileFolderColumn = 1;
-        int fileIdColumn = 2;
+        if (null == cursor) {
+            HANDLER.sendEmptyMessage(-1);
+        }
 
         String filePath;
         String fileFolder;
@@ -54,11 +52,13 @@ class PickerItemFetchThread extends Thread {
         int position=0;
 
         while (null!=cursor && cursor.moveToNext()) {
-            if (isInterrupt) return;
+            if (isInterrupt) {
+                return;
+            }
 
-            filePath = cursor.getString(filePathColumn);
-            fileFolder = cursor.getString(fileFolderColumn);
-            fileId = cursor.getString(fileIdColumn);
+            filePath = cursor.getString(0);
+            fileFolder = cursor.getString(1);
+            fileId = cursor.getString(2);
 
             if (null==SELECTED_FOLDER || SELECTED_FOLDER.equals(fileFolder)) { // all folder or specified folder
                 thumbnailPath = getThumbnailPath(fileId);

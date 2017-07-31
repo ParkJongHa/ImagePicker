@@ -80,7 +80,7 @@ class ImagePickerAdapter extends RecyclerView.Adapter<ImagePickerAdapter.Holder>
             }
         });
 
-        if (pickerItemList.get(i).isSelected()) {
+        if (pickerItemList.get(_holder.getAdapterPosition()).isSelected()) {
             _holder.flCheck.setVisibility(View.VISIBLE);
         } else {
             _holder.flCheck.setVisibility(View.INVISIBLE);
@@ -109,7 +109,7 @@ class ImagePickerAdapter extends RecyclerView.Adapter<ImagePickerAdapter.Holder>
 
             ImageView imageView = (ImageView) msg.obj;
 
-            if (null == imageView.getTag()) {
+            if (null==imageView.getTag() || !(imageView.getTag() instanceof Bitmap)) {
                 imageView.setImageResource(R.drawable.broken);
             } else {
                 imageView.setImageBitmap((Bitmap) imageView.getTag());

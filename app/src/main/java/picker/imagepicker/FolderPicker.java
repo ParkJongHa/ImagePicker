@@ -50,9 +50,7 @@ class FolderPicker {
         llFolderOuter.setVisibility(View.VISIBLE);
 
         String[] projection = { MediaStore.Images.Media.DATA, MediaStore.Images.Media.BUCKET_DISPLAY_NAME };
-
-        Uri uri = MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
-        Cursor cursor = context.getContentResolver().query(uri, projection, null, null, null);
+        Cursor cursor = context.getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, projection, null, null, null);
 
         HashMap<String, Integer> folderMap = new HashMap<>(); // folderName, fileCountInAFolder
         int allFileCount = 0;
@@ -70,7 +68,7 @@ class FolderPicker {
             allFileCount++;
         }
 
-        if (null!=cursor) {
+        if (null != cursor) {
             cursor.close();
         }
 
