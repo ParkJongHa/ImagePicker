@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ImagePicker</string>
+    <string name="all">all</string>
+    <string name="All">All</string>
+    <string name="need_permission">You need permission</string>
+    <string name="max">max</string>
+    <string name="Max">Max</string>
+    <string name="empty">empty</string>
+    <string name="Empty">Empty</string>
+</resources>

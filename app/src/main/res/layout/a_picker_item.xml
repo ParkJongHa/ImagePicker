@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="1dp"
+    android:layout_height="1dp">
+
+    <FrameLayout android:id="@+id/flPicker"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:layout_gravity="center">
+        <ImageView android:id="@+id/ivPickerImage"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:layout_gravity="center"/>
+
+        <FrameLayout android:id="@+id/flCheck"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <FrameLayout android:layout_width="match_parent" android:layout_height="5dp" android:layout_gravity="top" android:background="@color/colorAccent"/>
+            <FrameLayout android:layout_width="match_parent" android:layout_height="5dp" android:layout_gravity="bottom" android:background="@color/colorAccent"/>
+            <FrameLayout android:layout_width="5dp" android:layout_height="match_parent" android:layout_gravity="left" android:background="@color/colorAccent"/>
+            <FrameLayout android:layout_width="5dp" android:layout_height="match_parent" android:layout_gravity="right" android:background="@color/colorAccent"/>
+            <ImageView
+                android:layout_width="43dp"
+                android:layout_height="32dp"
+                android:src="@drawable/check"/>
+        </FrameLayout>
+    </FrameLayout>
+
+</FrameLayout>

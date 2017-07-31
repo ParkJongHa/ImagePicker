@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#66000000"
+    android:padding="10dp">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp">
+
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@drawable/popup_bg">
+
+
+
+
+
+            <!-- body -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <!-- image preview -->
+                <android.support.v7.widget.RecyclerView android:id="@+id/rvContentArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+                <!-- folder list -->
+                <LinearLayout android:id="@+id/llFolderOuter"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical"
+                    android:visibility="gone"
+                    android:background="#88000000"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:orientation="horizontal"
+                        android:layout_weight="2"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp">
+
+                        <ScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#EEEEEE"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp">
+
+                            <LinearLayout android:id="@+id/llFolderContentArea"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"/>
+
+                        </ScrollView>
+                    </LinearLayout>
+                </LinearLayout>
+            </FrameLayout>
+
+
+
+            <!-- line -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="#888888"/>
+
+
+
+            <!-- bottom -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <!-- bottom left icon -->
+                <ImageView android:onClick="onClickClose"
+                    android:layout_width="64dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/x" />
+
+                <!-- bottom center folder -->
+                <LinearLayout android:onClick="onClickFolder"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:padding="10dp">
+                    <TextView android:id="@+id/tFolder"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textColor="#000000"/>
+                </LinearLayout>
+
+                <!-- bottom right icon -->
+                <RelativeLayout
+                    android:layout_width="64dp"
+                    android:layout_height="48dp"
+                    android:onClick="onClickSelect">
+                    <TextView android:id="@+id/tSelectedDesc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#FF4081"/>
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="48dp"
+                        android:background="@drawable/plus"/>
+                </RelativeLayout>
+            </LinearLayout>
+
+
+
+
+
+        </LinearLayout>
+
+
+
+
+    </FrameLayout>
+</LinearLayout>
+
